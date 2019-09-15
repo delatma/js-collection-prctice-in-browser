@@ -2,17 +2,12 @@
 
 function collectSameElements(collectionA, objectB) {
 	var arr = [];
-	var newArr = [];
-	for (var key in objectB) {
-	    if (objectB.hasOwnProperty(key)) {
-	        arr.push(objectB[key]);
-	    }
-	};
-
-	for(var i = 0; i < arr.length; i++)
-	{
-	    newArr = newArr.concat(arr[i]);
+	for(var j = 0; j < collectionA.length; j++){
+		for (var i = 0; i < objectB.value.length; i++){
+			if (objectB.value[i] == collectionA[j]){
+				arr.push(objectB.value[i]);
+			}
+		}
 	}
-
-	return collectionA.filter(value => -1 !== newArr.indexOf(value));
-}
+	return arr;
+};
