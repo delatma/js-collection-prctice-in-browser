@@ -1,13 +1,7 @@
 'use strict';
 
 function collectSameElements(collectionA, objectB) {
-	var arr = [];
-	for(var j = 0; j < collectionA.length; j++){
-		for (var i = 0; i < objectB.value.length; i++){
-			if (objectB.value[i] == collectionA[j].key){
-				arr.push(objectB.value[i]);
-			}
-		}
-	}
-	return arr;
+	let valueA = collectionA.map(a => a.key)
+	let valueB = Object.values(objectB).reduce(a => a);
+	return valueA.filter(value => -1 !== valueB.indexOf(value))
 }
